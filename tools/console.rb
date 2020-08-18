@@ -19,6 +19,7 @@ rest2 = Restaurant.new(tommy, "rest2", 4)
 tomyum = MenuItem.new(rest1, recipe1, 20)
 hotdog = MenuItem.new(rest2, recipe2, 10)
 
+# CARYN SAYS: make sure you're creating enough instances to test with 
 
 # ===== WARNING! DO NOT EDIT BELOW THIS LINE ===== #
 binding.pry

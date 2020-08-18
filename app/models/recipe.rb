@@ -19,6 +19,8 @@ class Recipe
     end
 
     def restaurants
+        # CARYN SAYS: make sure you're using your helper method! 
+        # this is another instance as well of deciding which enumerable is most appropriate 
         MenuItem.all.select do |item|
             item.recipe == self
             item.restaurant
@@ -28,6 +30,8 @@ class Recipe
 
     def average_price
         prices = []
+        # CARYN SAYS: same thing with the enumerable choice here
+        # seems to me like you got comfortable with filter and are trying to use a hammer where a screwdriver would be a better tool, metaphorically 
         MenuItem.all.filter do |item| 
             item.recipe == self
             prices << item.price
@@ -37,6 +41,7 @@ class Recipe
 
     def highest_price
         prices = []
+        # CARYN SAYS: yep, you have to stop with filter
         prices << MenuItem.all.filter { |item| item.recipe == self}.max
     end
 
@@ -50,6 +55,7 @@ class Recipe
     end
 
     def self.inactive
+        # CARYN SAYS: not quite! we'll go over the logic after lunch 
         MenuItem.all.filter { |item| item.recipe != self}
     end
 

@@ -19,12 +19,15 @@ class RestaurantOwner
 
     def menu_items
         MenuItem.all.filter do |items| 
-            items.restaurant == self
+            items.restaurant == self # CARYN SAYS: you're inside of RestaurantOwner, so self will be an instance of RestaurantOwner
         end
+        # CARYN SAYS: use your restaurants helper method. Once you have an array of all the restaurants, you can grab each Restaurant's menu items 
     end
     
     def self.average_age
         sum = []
+        # CARYN SAYS: think about which enumberable suits the behavior. Filter isn't necessary here
+        #  - we don't need a new array that only includes some of the elements of the array
         self.all.filter do |owners| 
             sum << owners.age
         end
@@ -32,6 +35,7 @@ class RestaurantOwner
     end
 
     def sell_restaurant(restaurant, buyer)
+        # CARYN SAYS: easy! nice! 
         if restaurant.owner == self
             restaurant.owner = buyer
         end
